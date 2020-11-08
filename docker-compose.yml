@@ -1,0 +1,17 @@
+version: '2.2'
+services:
+  mflask_title:
+    container_name: mflask_test
+    image: mflsk_compose
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - ygmr-network
+    ports:
+      - "11124:11124"
+    restart: always
+
+networks:
+    ygmr-network:
+        external: true
